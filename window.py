@@ -7,15 +7,17 @@
 # WARNING! All changes made in this file will be lost!
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
+
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(595, 517)
+        MainWindow.resize(578, 517)
         self.centralwidget = QtWidgets.QWidget(MainWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.widget = QtWidgets.QWidget(self.centralwidget)
-        self.widget.setGeometry(QtCore.QRect(40, 30, 501, 441))
+        self.widget.setGeometry(QtCore.QRect(20, 30, 501, 441))
         self.widget.setObjectName("widget")
         self.label = QtWidgets.QLabel(self.widget)
         self.label.setGeometry(QtCore.QRect(60, 30, 61, 31))
@@ -113,11 +115,14 @@ class Ui_MainWindow(object):
         self.pushButton_3.setObjectName("pushButton_3")
         self.progressBar = QtWidgets.QProgressBar(self.widget)
         self.progressBar.setGeometry(QtCore.QRect(60, 160, 411, 23))
-        self.progressBar.setProperty("value", 24)
+        self.progressBar.setProperty("value", 0)
         self.progressBar.setObjectName("progressBar")
+        self.pushButton = QtWidgets.QPushButton(self.widget)
+        self.pushButton.setGeometry(QtCore.QRect(380, 260, 81, 31))
+        self.pushButton.setObjectName("pushButton")
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 595, 23))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 578, 23))
         self.menubar.setObjectName("menubar")
         MainWindow.setMenuBar(self.menubar)
         self.statusbar = QtWidgets.QStatusBar(MainWindow)
@@ -142,4 +147,7 @@ class Ui_MainWindow(object):
         self.lineEdit_2.setText(_translate("MainWindow", "shujuzhuaqu"))
         self.label_7.setText(_translate("MainWindow", "已抓酒店数量:"))
         self.pushButton_3.setText(_translate("MainWindow", "更新酒店"))
+        self.pushButton.setText(_translate("MainWindow", "酒店保存"))
 
+    def showMessage(self):
+        QMessageBox.about(self, '提示', '文件保存成功!!!')

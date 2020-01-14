@@ -1,6 +1,6 @@
-import time
+import datetime
 
-data_str = '99.99'
-new_data = float(data_str)
-print(new_data)
-print(type(new_data))
+today = datetime.date.today()
+tomorrow = today + datetime.timedelta(days=-1)
+print(today)
+print(tomorrow)
